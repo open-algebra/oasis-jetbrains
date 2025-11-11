@@ -1,0 +1,45 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.openalgebra.OasisPALM-IDEA</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>OasisPALM-IDEA</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor url="https://oasis.openalgebra.org">Oasis</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+OasisPALM-IDEA is an IntelliJ IDEA plugin that provides support for the OasisPALM modeling language. It includes syntax highlighting and error annotations.
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType
+                name="PALM File"
+                implementationClass="org.openalgebra.oasispalmidea.language.PALMFileType"
+                fieldName="INSTANCE"
+                language="PALM"
+                extensions="palm"/>
+
+        <lang.parserDefinition
+                language="PALM"
+                implementationClass="org.openalgebra.oasispalmidea.language.PALMParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory
+                language="PALM"
+                implementationClass="org.openalgebra.oasispalmidea.language.PALMSyntaxHighlighterFactory"/>
+
+        <annotator
+                language="PALM"
+                implementationClass="org.openalgebra.oasispalmidea.language.PALMAnnotator"/>
+    </extensions>
+</idea-plugin>

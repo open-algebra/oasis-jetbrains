@@ -1,0 +1,25 @@
+{
+  parserClass = "org.openalgebra.oasispalmidea.parser.PALMParser"
+
+  extends = "com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix = "PALM"
+  psiImplClassSuffix = "Impl"
+  psiPackage = "org.openalgebra.oasispalmidea.language.psi"
+  psiImplPackage = "org.openalgebra.oasispalmidea.language.psi.impl"
+
+  elementTypeHolderClass = "org.openalgebra.oasispalmidea.language.psi.PALMTypes"
+  elementTypeClass = "org.openalgebra.oasispalmidea.language.psi.PALMElementType"
+  tokenTypeClass = "org.openalgebra.oasispalmidea.language.psi.PALMTokenType"
+
+  psiImplUtilClass = "org.openalgebra.oasispalmidea.language.psi.impl.PALMPsiImplUtil"
+}
+
+palmFile ::= expression
+
+expression ::= (START_EXPRESSION OPERATOR operand* END_EXPRESSION)
+{
+    methods = [getOperatorText getOperands]
+}
+
+operand ::= expression | NUMBER | IDENTIFIER
