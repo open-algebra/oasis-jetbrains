@@ -40,15 +40,15 @@ cd oasis-jetbrains
 ```
 
 3. Locate the Built Plugins
-   The built plugin files can be found in the `build/distributions` directory of each plugin module.
+The built plugin files can be found in the `build/distributions` directory of each plugin module.
 
 4. Install the Plugins in JetBrains IDE
-    - Open your JetBrains IDE.
-    - Go to `File` > `Settings` (or `Preferences` on macOS).
-    - Navigate to `Plugins`.
-    - Click on the gear icon and select `Install Plugin from Disk`.
-    - Browse to the `build/distributions` directory and select the plugin ZIP file.
-    - Restart the IDE to activate the plugin.
+- Open your JetBrains IDE.
+- Go to `File` > `Settings` (or `Preferences` on macOS).
+- Navigate to `Plugins`.
+- Click on the gear icon and select `Install Plugin from Disk`.
+- Browse to the `build/distributions` directory and select the plugin ZIP file.
+- Restart the IDE to activate the plugin.
 
 ---
 
