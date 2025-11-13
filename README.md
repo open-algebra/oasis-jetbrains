@@ -20,7 +20,7 @@ OasisPALM-IDEA is a JetBrains plugin that provides syntax highlighting and error
 
 ## Building from Source
 
-This project uses Gradle as its build system. Below are teh step-by-step instructions to build the plugins from source.
+This project uses Gradle as its build system. Below are the step-by-step instructions to build the plugins from source.
 
 ### Requirements
 
