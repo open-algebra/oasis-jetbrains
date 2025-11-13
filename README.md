@@ -33,14 +33,9 @@ This project uses Gradle as its build system. Below are the step-by-step instruc
 
 1. Clone the Repository
 
-```shell script
+```shell
 git clone https://github.com/open-algebra/oasis-jetbrains.git
 cd oasis-jetbrains
-```
-
-2. Build the Plugins
-
-```shell script
 ./gradlew buildPlugin
 ```
 
