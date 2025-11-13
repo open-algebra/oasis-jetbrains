@@ -1,4 +1,4 @@
-![OASIS Owl Logo](docs/Owl.svg)
+<img src="docs/Owl.svg" alt="OASIS Owl Logo" width="25%">
 <small>Credit: Mansi Panwar for artwork</small>
 
 # OASIS JetBrains: OASIS Plugins for JetBrains IDEs
