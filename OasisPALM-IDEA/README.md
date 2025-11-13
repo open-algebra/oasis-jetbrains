@@ -29,17 +29,23 @@ Here is a simple example of a Palm file:
 ```
 
 This expression represents:
-- Subtraction
-  - Division
-    - Real
-      - Number 10
-    - Real
-      - Number 2
-  - Logarithm
-    - Real
-      - Number 10
-    - Real
-      - Number 100
+``` mermaid
+graph TD
+    Subtraction --> Division
+    Subtraction --> Logarithm
+
+    Division --> R1["Real"]
+    R1 --> N10["Number 10"]
+
+    Division --> R2["Real"]
+    R2 --> N2["Number 2"]
+
+    Logarithm --> R3["Real"]
+    R3 --> N10b["Number 10"]
+
+    Logarithm --> R4["Real"]
+    R4 --> N100["Number 100"]
+```
 
 In infix notation, this would be equivalent to:
 ```
