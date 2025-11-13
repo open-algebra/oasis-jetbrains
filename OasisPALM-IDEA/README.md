@@ -24,7 +24,7 @@ Palm files follow the BNF grammar described in the [OASIS PALM Specification](./
 ## Example Palm File
 Here is a simple example of a Palm file:
 
-```palm ExamplePalm
+```palm
 (- (/ (real 10) (real 2)) (log (real 10) (real 100)))
 ```
 
