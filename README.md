@@ -12,7 +12,7 @@ development.
 
 ## Plugins
 
-### (OasisPALM-IDEA)[./OasisPALM-IDEA/README.md]
+### [OasisPALM-IDEA](./OasisPALM-IDEA/README.md)
 
 OasisPALM-IDEA is a JetBrains plugin that provides syntax highlighting and error checking for OASIS PALM files.
 
