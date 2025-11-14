@@ -26,31 +26,70 @@ class PALMAnnotator : Annotator {
             else -> null
         }
 
-        if (expected != null && operands.size != expected) {
+        // Unknown operator check
+        if (expected == null) {
+            holder.newAnnotation(
+                HighlightSeverity.ERROR,
+                "Unknown operator '$op'")
+                .range(element.textRange)
+                .create()
+            return
+        }
+
+        // Arity check
+        if (operands.size != expected) {
             holder.newAnnotation(
                 HighlightSeverity.ERROR,
                 "Operator '$op' expects $expected operand(s), found ${operands.size}")
                 .range(element.textRange)
                 .create()
+            return
         }
 
-        // real Number check
-        when (op) {
-            "real" -> {
-                if (operands.size == expected && element.operands[0].firstChild.elementType != PALMTypes.NUMBER) { // Argument should be a number
+        // (real Number) check
+        if (op == "real") {
+            val firstOperand = element.operands[0]
+            if (firstOperand.firstChild.elementType != PALMTypes.NUMBER) {
+                holder.newAnnotation(
+                    HighlightSeverity.ERROR,
+                    "Operator 'real' expects a numeric operand")
+                    .range(firstOperand.textRange)
+                    .create()
+            }
+            return
+        }
+
+        // (var Identifier) check
+        if (op == "var") {
+            val firstOperand = element.operands[0]
+            if (firstOperand.firstChild.elementType != PALMTypes.IDENTIFIER) {
+                holder.newAnnotation(
+                    HighlightSeverity.ERROR,
+                    "Operator 'var' expects a variable name, not a numeric operand")
+                    .range(firstOperand.textRange)
+                    .create()
+            }
+            return
+        }
+
+        // Ensure Number only for 'real' and Identifier only for 'var'
+        for (operand in operands) {
+            when (operand.firstChild.elementType) {
+                PALMTypes.IDENTIFIER -> {
                     holder.newAnnotation(
                         HighlightSeverity.ERROR,
-                        "Operator 'real' expects a numeric operand")
-                        .range(element.operands[0].textRange)
+                        "Operator '$op' does not accept variable names as operands"
+                    )
+                        .range(operand.textRange)
                         .create()
                 }
-            }
-            "var" -> {
-                if (operands.size == expected && element.operands[0].firstChild.elementType != PALMTypes.IDENTIFIER) { // Argument should be a variable
+
+                PALMTypes.NUMBER -> {
                     holder.newAnnotation(
                         HighlightSeverity.ERROR,
-                        "Operator 'var' expects a variable name, not a numeric operand")
-                        .range(element.operands[0].textRange)
+                        "Operator '$op' does not accept numeric operands"
+                    )
+                        .range(operand.textRange)
                         .create()
                 }
             }
