@@ -1,11 +1,11 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>org.openalgebra.OasisPALM-IDEA</id>
+    <id>org.openalgebra.OasisPALM</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
-    <name>OasisPALM-IDEA</name>
+    <name>OasisPALM</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor url="https://oasis.openalgebra.org">Oasis</vendor>
@@ -15,6 +15,8 @@
     <description><![CDATA[
 OasisPALM-IDEA is an IntelliJ IDEA plugin that provides support for the OasisPALM modeling language. It includes syntax highlighting and error annotations.
     ]]></description>
+
+    <idea-version since-build="241.1"/>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
