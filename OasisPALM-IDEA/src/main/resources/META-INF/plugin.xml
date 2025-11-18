@@ -13,7 +13,7 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
     <description><![CDATA[
-OasisPALM-IDEA is an IntelliJ IDEA plugin that provides support for the OasisPALM modeling language. It includes syntax highlighting and error annotations.
+OasisPALM is an IntelliJ IDEA plugin that provides support for the OasisPALM modeling language. It includes syntax highlighting and error annotations.
     ]]></description>
 
     <idea-version since-build="241.1"/>
