@@ -16,7 +16,7 @@
 OasisPALM is an IntelliJ IDEA plugin that provides support for the OasisPALM modeling language. It includes syntax highlighting and error annotations.
     ]]></description>
 
-    <idea-version since-build="241.1"/>
+    <idea-version since-build="251"/>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
